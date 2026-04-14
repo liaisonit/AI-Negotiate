@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 // --- API Configuration ---
-const apiKey = ""; 
+const apiKey = "AIzaSyBNhUjAtl7ks-ojlQN6cSyohrVAkwGXIkk"; 
 const MODEL_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
 const SYSTEM_PROMPT = `
