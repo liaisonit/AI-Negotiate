@@ -152,12 +152,11 @@ export default function App() {
     setIsTyping(true);
 
     try {
-      let finalResponse;
-      if (apiKey) {
-        finalResponse = await callGeminiAPI(text);
-      }
+      // The environment handles the API Key injection securely at runtime.
+      // We directly await the call instead of validating if the apiKey string is empty.
+      let finalResponse = await callGeminiAPI(text);
       
-      // Fallback logic if API fails or no key provided
+      // Fallback logic ONLY triggers if the API completely fails or returns empty
       if (!finalResponse) {
         const lower = text.toLowerCase();
         finalResponse = (lower.includes('rate') || lower.includes('interest') || lower.includes('wait') || lower.includes('expensive'))
